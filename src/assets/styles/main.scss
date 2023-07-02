@@ -1,0 +1,9 @@
+.action-wrap {
+  color: rgb(62, 90, 248);
+  span {
+    cursor: pointer;
+  }
+  span+span {
+    margin-left: 10px;
+  }
+}
