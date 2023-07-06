@@ -1,5 +1,5 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
-export const useRoleStore = defineStore("role", () => {
-  return {};
-});
+export const useRoleStore = defineStore('role', () => {
+	return {}
+})

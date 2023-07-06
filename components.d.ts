@@ -5,20 +5,20 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AddWrapper: typeof import('./src/components/addWrapper/index.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    ElDatePicker: typeof import('element-plus/es')['ElDatePicker']
-    ElIn: typeof import('element-plus/es')['ElIn']
-    ElInput: typeof import('element-plus/es')['ElInput']
-    ElPagination: typeof import('element-plus/es')['ElPagination']
-    ElTable: typeof import('element-plus/es')['ElTable']
-    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
-    PageList: typeof import('./src/components/pageList/index.vue')['default']
-    Pagination: typeof import('./src/components/pagination/index.vue')['default']
+    EditorWrap: typeof import('./src/components/EditorWrap/index.vue')['default']
+    FormWrap: typeof import('./src/components/FormWrap/index.vue')['default']
+    MenuWrap: typeof import('./src/components/MenuWrap/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SearchList: typeof import('./src/components/searchList/index.vue')['default']
+    SearchWrap: typeof import('./src/components/SearchWrap/index.vue')['default']
+    SecondWrap: typeof import('./src/components/SecondWrap/index.vue')['default']
+    TButton: typeof import('tdesign-vue-next')['Button']
+    TConfigProvider: typeof import('tdesign-vue-next')['ConfigProvider']
+    TForm: typeof import('tdesign-vue-next')['Form']
+    TFormItem: typeof import('tdesign-vue-next')['FormItem']
+    THeadMenu: typeof import('tdesign-vue-next')['HeadMenu']
+    TTable: typeof import('tdesign-vue-next')['Table']
+    TTag: typeof import('tdesign-vue-next')['Tag']
   }
 }
 
