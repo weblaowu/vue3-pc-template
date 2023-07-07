@@ -1,8 +1,25 @@
 html,
-body {
+body, #app {
   height: 100%;
   width: 100%;
 }
+
+// table 高度自适应
+.container {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+    .t-table {
+      height: 0;
+      flex: 1;
+      .t-table__content {
+        min-height: 200px;
+        height: calc(100% - 64px);
+      }
+    }
+}
+
 .action-wrap {
   color: $bule;
 

@@ -1,3 +1,3 @@
-import MenuWrap from "./src/index.jsx";
+import MenuWrap from './src/index.jsx'
 
-export default MenuWrap;
+export default MenuWrap

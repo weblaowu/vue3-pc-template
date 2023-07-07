@@ -10,7 +10,7 @@ export const routes = [
 				path: '',
 				name: 'home',
 				meta: { title: 'home' },
-				component: () => import('@/views/home.vue'),
+				component: () => import('@/views/Home/index.vue'),
 			},
 		],
 	},

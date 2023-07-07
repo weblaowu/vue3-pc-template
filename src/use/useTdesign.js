@@ -15,33 +15,9 @@ export const useModal = () => {
 	}
 }
 
-// 控制表格
-export const useTable = () => {
+// 控制表格高度自适应屏幕
+export const useTableHeight = () => {
 	const height = ref('')
-	const tableData = ref({
-		list: [],
-		total: 0,
-	})
-
-	const pagination = ref({
-		current: 1,
-		pageSize: 10,
-		total: 0,
-		onChange({ current, pageSize }) {
-			this.current = current
-			this.pageSize = pageSize
-		},
-	})
-	watch(
-		() => tableData.value.total,
-		(total) => {
-			pagination.value.total = total
-		}
-	)
-	// 设置数据
-	const setTableData = (data = {}) => {
-		tableData.value = data
-	}
 	let tableRef = null
 	let cache = {}
 	// resize 防抖
@@ -69,9 +45,6 @@ export const useTable = () => {
 		window.removeEventListener('resize', handleDebounce)
 	})
 	return {
-		tableData,
-		pagination,
-		setTableData,
 		height,
 	}
 }

@@ -3,15 +3,9 @@
 		<div class="title">{{ title }}</div>
 		<t-form v-bind="$attrs" ref="tform" :data="data" @submit="onSubmit">
 			<template
-				v-for="{
-					show = true,
-					compProps,
-					compName,
-					slotName,
-					...item
-				} in formItem"
+				v-for="{ show = true, compProps, compName, slotName, ...item } in items"
 			>
-				<t-form-item v-if="show" v-bind="item" :key="item.prop">
+				<t-form-item v-if="show" v-bind="item" :key="item.name">
 					<slot :name="slotName">
 						<!-- 默认是 input，不满足可自定义 -->
 						<component
@@ -56,7 +50,7 @@ const props = defineProps({
 		type: String,
 		default: '',
 	},
-	formItem: {
+	items: {
 		type: Array,
 		default: () => [],
 	},
@@ -77,6 +71,7 @@ const dataComp = computed({
 const tform = ref(null)
 // 确认
 function onSubmit(valid) {
+	console.log('valid: ', valid)
 	const { validateResult } = valid
 	if (validateResult === true) {
 		emit('ok')

@@ -1,24 +1,43 @@
 <template>
-	<div id="searchWrap" class="search-wrap">
-		<div class="search-wrap_body">
+	<div v-if="modelValue" ref="secondWrap" class="second-wrap">
+		<div class="seconch-wrap_body">
 			<slot></slot>
 		</div>
 	</div>
 </template>
 
 <script setup>
-import { animateCSS } from '@/tools/utils/index'
+import { animateCSS } from '@/utils/animate'
 
+const props = defineProps({
+	modelValue: {
+		type: Boolean,
+		default: false,
+	},
+})
+defineEmits(['update:modelValue'])
+
+const secondWrap = ref(null)
+
+watch(
+	() => props.modelValue,
+	(val) => {
+		if (!val) return
+		nextTick(() => {
+			animateCSS(secondWrap.value, 'fadeInUp')
+		})
+	}
+)
 onMounted(() => {
 	const height = document.body.clientHeight
-	const searchWrap = document.getElementById('searchWrap')
-	searchWrap.style.height = `${height}px`
-	animateCSS('.search-wrap', 'fadeInUp')
+	if (secondWrap.value) {
+		secondWrap.value.style.height = `${height}px`
+	}
 })
 </script>
 
 <style lang="scss" scoped>
-.search-wrap {
+.second-wrap {
 	box-sizing: border-box;
 	position: fixed;
 	top: 0;

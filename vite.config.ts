@@ -41,6 +41,12 @@ export default defineConfig({
 		// 配置别名
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
+			'@api': path.resolve(__dirname, 'src/api'),
+			'@components': path.resolve(__dirname, 'src/components'),
+			'@utils': path.resolve(__dirname, 'src/utils'),
+			'@store': path.resolve(__dirname, 'src/store'),
+			'@assets': path.resolve(__dirname, 'src/assets'),
+			'@use': path.resolve(__dirname, 'src/use'),
 		},
 	},
 	css: {
