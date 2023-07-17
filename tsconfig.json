@@ -23,7 +23,8 @@
 			"@utils/*": ["src/utils/*"],
 			"@assets/*": ["src/assets/*"],
 			"@use/*": ["src/use/*"],
-			"@store/*": ["src/store/*"]
+			"@store/*": ["src/store/*"],
+			"@middleware/*": ["src/middleware/*"]
 		}
 	},
 	"include": [

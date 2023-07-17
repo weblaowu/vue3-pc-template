@@ -30,6 +30,10 @@
 <script setup>
 import { Input } from 'tdesign-vue-next'
 
+defineOptions({
+	name: 'SearchWrap',
+})
+
 const props = defineProps({
 	items: {
 		type: Array,

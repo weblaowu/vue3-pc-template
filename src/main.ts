@@ -7,8 +7,10 @@ import 'tdesign-vue-next/es/style/index.css'
 import 'animate.css'
 import '@/assets/styles/common.scss'
 import './permission'
+import { registerGlobalComponents } from '@middleware/globalComponent'
 
 const app = createApp(App)
+registerGlobalComponents(app)
 const pinia = createPinia()
 app.use(pinia)
 app.use(router)

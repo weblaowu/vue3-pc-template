@@ -9,13 +9,16 @@
 <script setup>
 import { animateCSS } from '@/utils/animate'
 
+defineOptions({ name: 'SecondWrap' })
+
+defineEmits(['update:modelValue'])
+
 const props = defineProps({
 	modelValue: {
 		type: Boolean,
 		default: false,
 	},
 })
-defineEmits(['update:modelValue'])
 
 const secondWrap = ref(null)
 

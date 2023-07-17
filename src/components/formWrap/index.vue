@@ -34,7 +34,7 @@
 import { Input } from 'tdesign-vue-next'
 
 defineOptions({
-	name: 'FromWrap',
+	name: 'FormWrap',
 })
 
 const props = defineProps({

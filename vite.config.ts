@@ -47,6 +47,7 @@ export default defineConfig({
 			'@store': path.resolve(__dirname, 'src/store'),
 			'@assets': path.resolve(__dirname, 'src/assets'),
 			'@use': path.resolve(__dirname, 'src/use'),
+			'@middleware': path.resolve(__dirname, 'src/middleware'),
 		},
 	},
 	css: {

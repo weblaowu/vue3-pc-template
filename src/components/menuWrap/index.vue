@@ -14,6 +14,10 @@
 import { MenuItem } from 'tdesign-vue-next'
 import { routes } from '@/router/baseRoutes'
 
+defineOptions({
+	name: 'MenuWrap',
+})
+
 const route = useRoute()
 
 const activeMenu = ref('')
