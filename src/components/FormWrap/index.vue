@@ -60,7 +60,7 @@ const props = defineProps({
 	},
 })
 
-const emit = defineEmits(['ok', 'cancel', 'after-close', 'update:value'])
+const emit = defineEmits(['ok', 'cancel', 'update:value'])
 
 const dataComp = computed({
 	get() {
