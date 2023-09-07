@@ -23,9 +23,6 @@
 <script setup lang="jsx">
 import { Select } from 'tdesign-vue-next'
 import useRequest from '@/use/useRequest'
-import SecondWrap from '@/components/SecondWrap/index.vue'
-import FormWrap from '@/components/FormWrap/index.vue'
-import SearchWrap from '@/components/SearchWrap/index.vue'
 import { formState } from './homeState'
 import { checkPermissionAPI } from '@api/index.js'
 
