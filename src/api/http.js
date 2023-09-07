@@ -7,7 +7,7 @@ const source = CancelToken.source()
 
 const service = axios.create({
 	timeout: 30000, // 请求超时时间
-	baseURL: import.meta.env.VITE_APP_BASE_URL,
+	baseURL: import.meta.env.VITE_API_BASE_URL,
 	headers: {
 		'Content-Type': 'application/json;charset=UTF-8',
 	},
