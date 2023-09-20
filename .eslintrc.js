@@ -10,8 +10,8 @@ module.exports = {
 	},
 	// lint 规则
 	extends: [
-		'eslint:recommended',
 		'plugin:vue/vue3-recommended',
+		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		// 1. 接入 prettier 的规则
 		'prettier',
