@@ -7,7 +7,7 @@ import 'tdesign-vue-next/es/style/index.css'
 import 'animate.css'
 import '@/assets/styles/common.scss'
 import './permission'
-import globalComp from '@/components/global'
+import globalComp from '@/components/Global'
 
 const app = createApp(App)
 const pinia = createPinia()
