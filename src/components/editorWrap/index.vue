@@ -17,7 +17,10 @@
 </template>
 
 <script setup>
-// 若使用改组件，请安装这两个依赖 @wangeditor/editor | @wangeditor/editor-for-vue
+/*
+  若使用该组件，请安装以下两个依赖
+  pnpm add @wangeditor/editor @wangeditor/editor-for-vue
+*/
 import '@wangeditor/editor/dist/css/style.css' // 引入 css
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import { uploadCoverAPI } from '@/api/index'

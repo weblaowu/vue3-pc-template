@@ -1,14 +1,15 @@
 {
-	"name": "vue-ts",
+	"name": "vuu3-pc-template",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
 		"build:test": "vite build --mode=test",
 		"preview": "vite preview",
-		"lint": "eslint --ext .js,.vue,.jsx,.ts,.tsx --fix --quiet ./",
-		"prettier": "prettier --write"
+		"lint:script": "eslint --ext .vue,.js,.jsx,.ts,.tsx --fix --quiet ./src",
+		"prettier": "npx prettier --write .",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"animate.css": "^4.1.1",
