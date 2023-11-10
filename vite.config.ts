@@ -6,6 +6,7 @@ import Components from 'unplugin-vue-components/vite'
 import { TDesignResolver } from 'unplugin-vue-components/resolvers'
 import legacy from '@vitejs/plugin-legacy'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig(({ mode }) => {
 	// vite 中获取环境变量
@@ -84,6 +85,12 @@ export default defineConfig(({ mode }) => {
 				// 设置目标浏览器，browserslist 配置语法
 				targets: ['chrome >=80'],
 			}),
+			/* 开启mock配置 */
+			// viteMockServe({
+			// 	// localEnabled: true, // 此处可以手动设置为true，也可以根据官方文档格式
+			// 	mockPath: './src/mock/',
+			// 	logger: true,
+			// }),
 		],
 		optimizeDeps: {
 			include: ['lodash-es'],

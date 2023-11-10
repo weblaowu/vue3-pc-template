@@ -1,5 +1,11 @@
 import service from './http'
 
-export const checkPermissionAPI = (headers) => {
-	return service.post('/permission/checkToken', {}, { headers })
-}
+// 例子
+// export const checkPermissionAPI = (data) => {
+// 	return service.post('/permission/checkToken', data, {
+// 		headers: {
+// 			responseType: 'blob',
+// 			'Content-type': 'multipart/form-data',
+// 		},
+// 	})
+// }

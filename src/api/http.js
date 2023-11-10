@@ -17,6 +17,8 @@ const service = axios.create({
 // 请求拦截
 service.interceptors.request.use(
 	(config) => {
+		const token = sessionStorage.getItem('token')
+		token && (config.headers.authorization = `Bearer ${token}`)
 		return config
 	},
 	(error) => {
@@ -27,7 +29,8 @@ service.interceptors.request.use(
 /** 添加响应拦截器  * */
 service.interceptors.response.use(
 	(response) => {
-		const { data, status } = response
+		const { data, status, config } = response
+		if (config.headers.responseType === 'blob') return data
 		if (status === 200) {
 			const { code, message } = data
 			if (code !== 200) {

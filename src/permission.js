@@ -9,6 +9,8 @@ NProgress.configure({
 // 路由进入之前
 router.beforeEach((to, _, next) => {
 	NProgress.start()
+	const { token } = to.query
+	token && sessionStorage.setItem('token', token)
 	next()
 })
 
