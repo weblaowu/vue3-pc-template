@@ -6,12 +6,12 @@ import Components from 'unplugin-vue-components/vite'
 import { TDesignResolver } from 'unplugin-vue-components/resolvers'
 import legacy from '@vitejs/plugin-legacy'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import { viteMockServe } from 'vite-plugin-mock'
+// import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig(({ mode }) => {
 	// vite 中获取环境变量
 	const isProduct = mode === 'production'
-	const baseUrl = loadEnv(mode, process.cwd()).VITE_APP_BASE_URL
+	const baseUrl = loadEnv(mode, process.cwd()).VITE_PUBLIC_PATH
 	return {
 		base: baseUrl,
 		server: {
@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
 			https: false,
 			proxy: {
 				'/api': {
-					target: 'http://xxx',
+					target: 'http://127.0.0.1:4523/m1/3695511-0-default/',
 					changeOrigin: true,
 					rewrite: (path: string) => path.replace(/^\/api/, ''),
 				},

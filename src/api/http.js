@@ -1,17 +1,12 @@
 import axios from 'axios'
 import { MessagePlugin } from 'tdesign-vue-next'
 
-// 请求取消
-const CancelToken = axios.CancelToken
-const source = CancelToken.source()
-
 const service = axios.create({
 	timeout: 30000, // 请求超时时间
 	baseURL: import.meta.env.VITE_API_BASE_URL,
 	headers: {
 		'Content-Type': 'application/json;charset=UTF-8',
 	},
-	cancelToken: source.token,
 })
 
 // 请求拦截
@@ -33,18 +28,19 @@ service.interceptors.response.use(
 		if (config.headers.responseType === 'blob') return data
 		if (status === 200) {
 			const { code, message } = data
-			if (code !== 200) {
+			if (code === 200) {
+				return data
+			} else {
 				MessagePlugin.closeAll()
 				MessagePlugin.error(message)
-			} else {
-				return data
+				return Promise.reject(message)
 			}
 		}
 	},
 	(error) => {
-		if (error.response) {
-			console.log('error: ', error)
-		}
+		if (!error.response) return Promise.reject(error)
+		const { data, status } = error.response
+		return Promise.reject({ data, status })
 	}
 )
 

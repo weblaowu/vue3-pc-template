@@ -4,6 +4,17 @@ export const routes = [
 		redirect: '/home',
 	},
 	{
+		path: '/index',
+		children: [
+			{
+				path: '',
+				name: 'index',
+				meta: { title: 'index' },
+				component: () => import('@/views/index.vue'),
+			},
+		],
+	},
+	{
 		path: '/home',
 		children: [
 			{

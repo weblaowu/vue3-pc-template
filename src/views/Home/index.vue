@@ -24,7 +24,7 @@
 import { Select } from 'tdesign-vue-next'
 import useRequest from '@/use/useRequest'
 import { formState } from './homeState'
-import { checkPermissionAPI } from '@api/index.js'
+import { queryListApi, queryGetApi } from '@api/index.js'
 
 const { formData, formItem, initFormData } = formState()
 
@@ -36,11 +36,11 @@ const searchData = ref({
 	pageNum: 1,
 })
 
-const { data: tableData, run } = useRequest(checkPermissionAPI, {
+const { run, onAbort } = useRequest(queryGetApi, {
 	params: searchData.value,
 })
 
-tableData.value = [
+const tableData = ref([
 	{
 		applicant: 'xxxx',
 		status: 1,
@@ -55,7 +55,7 @@ tableData.value = [
 		'detail.email': 'email',
 		createTime: '2020-10-10',
 	},
-]
+])
 
 // 搜索字段
 const searchItem = [
@@ -72,9 +72,7 @@ const searchItem = [
 	{
 		title: '搜索',
 		type: 'button',
-		onClick: () => {
-			console.log('dainji: ~~~~', run())
-		},
+		onClick: () => {},
 	},
 	{
 		title: '下载',
@@ -82,7 +80,9 @@ const searchItem = [
 		theme: 'default',
 		variant: 'outline',
 		onClick: () => {
-			console.log('下载: ~~~~')
+			run().catch((err) => {
+				console.log('err: cccccccccc', err)
+			})
 		},
 	},
 ]
