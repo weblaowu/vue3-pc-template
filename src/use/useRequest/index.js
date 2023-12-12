@@ -49,12 +49,12 @@ const useRequest = (promiseData, options = {}) => {
 		// 执行loading
 		handleLoading(loading, config.loadingDelay, timerData)
 		try {
-			// 请求发送前钩子
-			await new Promise((resolve) => {
-				;(runOption?.onBefore || config.onBefore)(resolve)
-			})
 			// 合并初始参数 和 run传入的参数
 			const paramsData = { ...unref(config.params), ...unref(params || {}) }
+			// 请求发送前钩子
+			await new Promise((resolve) => {
+				;(runOption?.onBefore || config.onBefore)(resolve, paramsData)
+			})
 			// 发起请求
 			const res = await promiseData(paramsData, {
 				signal: abortController.signal,
