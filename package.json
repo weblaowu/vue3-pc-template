@@ -1,5 +1,5 @@
 {
-	"name": "vuu3-pc-template",
+	"name": "project",
 	"private": true,
 	"version": "0.1.0",
 	"scripts": {
@@ -8,8 +8,7 @@
 		"build:test": "vite build --mode=test",
 		"preview": "vite preview",
 		"lint:script": "eslint --ext .vue,.js,.jsx,.ts,.tsx --fix --quiet ./src",
-		"prettier": "npx prettier --write .",
-		"prepare": "husky install"
+		"prettier": "npx prettier --write ."
 	},
 	"dependencies": {
 		"animate.css": "^4.1.1",
