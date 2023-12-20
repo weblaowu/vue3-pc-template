@@ -9,7 +9,7 @@ const defaultConfig = {
 	immediate: false, // 是否立即发起请求
 	initialData: [], // data 数据格式
 	params: {}, // 请求初始化参数
-	isReactive: true, // 是否开启响应式参数
+	isReactive: false, // 是否开启响应式参数
 	onBefore: (resolve) => resolve(), // 请求发送前的钩子函数
 	onSuccess: (res) => res, // 请求成功后的钩子函数
 }
@@ -93,7 +93,7 @@ const useRequest = (promiseData, options = {}) => {
 		}
 	}
 	// 请求节流
-	const debouncedRun = debounce(run, 300) // 300ms 防抖时间
+	const debouncedRun = debounce(run, defaultConfig.loadingDelay) // 300ms 防抖时间
 	// 响应外部参数的变化
 	changeParams(config, options.params, debouncedRun)
 	onMounted(() => {
@@ -111,7 +111,7 @@ const useRequest = (promiseData, options = {}) => {
 	})
 	return {
 		data,
-		run,
+		run: debouncedRun,
 		error,
 		loading,
 		onAbort,

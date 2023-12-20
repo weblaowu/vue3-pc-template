@@ -17,7 +17,7 @@ const defaultConfig = {
 	immediate: false, // 是否立即发起请求
 	initialData: [], // data 数据格式
 	params: {}, // 请求初始化参数
-	isReactive: true, // 是否开启响应式参数
+	isReactive: false, // 是否开启响应式参数
 	onBefore: (resolve) => resolve(), // 请求发送前的钩子函数
 	onSuccess: (res) => res, // 请求成功后的钩子函数
 }
@@ -30,7 +30,7 @@ const defaultConfig = {
 // data , loading 均是响应式参数
 const { data, loading } = useRequest(promiseApi, {
 	immediate: true, // 立即执行请求，默认是false
-	isReactive: false, // 是否开启响应式参数， 默认是开启响应式参数
+	isReactive: true, // 是否开启响应式参数， 默认不开启
 	params: {
 		pageSize: 10,
 		pageNum: 1,
