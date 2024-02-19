@@ -1,4 +1,4 @@
-const modules = import.meta.glob('../global/*/*.vue')
+const modules = import.meta.glob('../Global/*/*.vue')
 
 // 注册全局组件
 const globalComp = {
